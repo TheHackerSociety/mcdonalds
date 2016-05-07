@@ -14,14 +14,12 @@ export default class Search extends React.Component {
       <div className="body-color">
         <div className="container">
           <nav>
-            <Link href="index.html"
-              className="nav-text cancel"
-              params={{ path: 'index' }} >
+            <Link href="index.html" className="nav-text cancel" params={{ path: 'index' }}>
               Cancel
             </Link>
           </nav>
           <input id="address-2"
-            onChange={(e) => this.setState({query: e.target.value})}
+            onChange={(e) => this.setState({ query: e.target.value })}
             type="text"
             placeholder="Address or zip"
             name="address-2"
@@ -44,7 +42,7 @@ export default class Search extends React.Component {
           </div>
         </div>
       </div>
-      );
+    );
   }
 }
 

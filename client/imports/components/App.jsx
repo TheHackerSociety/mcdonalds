@@ -11,7 +11,7 @@ import MakeContainer from './MakeContainer';
 import ParamStore from 'param-store';
 
 const IndexContainer = MakeContainer(Index, /((^index$)|(^$))/ig);
-const SearchContainer = MakeContainer(Search, /^search$/ig, {setAddress: React.PropTypes.func});
+const SearchContainer = MakeContainer(Search, /^search$/ig, { setAddress: React.PropTypes.func });
 const InfoContainer = MakeContainer(Info, /^info$/ig);
 const LoginContainer = MakeContainer(Login, /^login$/ig);
 const EventsByLocationContainer = MakeContainer(EventsByLocation, /^events-by-location$/ig);

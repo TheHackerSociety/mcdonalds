@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'param-store';
-import Search from './Search';
 
-const MakeContainer = (component, _path, propTypes={}) => {
+const MakeContainer = (component, _path, propTypes = {}) => {
   class Container extends React.Component {
     render() {
       const { path } = this.props.currentParams;
@@ -10,16 +9,20 @@ const MakeContainer = (component, _path, propTypes={}) => {
         return null;
       }
 
-      return React.createElement(component, {...this.props});
+      return React.createElement(component, this.props);
     }
   }
 
-  Container.propTypes = {
-    currentParams: React.PropTypes.object,
-    ...propTypes
-  };
+  Container.propTypes = Object.assign(
+    {},
+    {
+      currentParams: React.PropTypes.object,
+    },
+    propTypes
+  );
 
-  return connect(Container, 'path')
-}
+  return connect(Container, 'path');
+};
 
 export default MakeContainer;
+

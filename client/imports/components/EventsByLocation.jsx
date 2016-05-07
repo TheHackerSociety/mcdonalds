@@ -12,20 +12,20 @@ export default class EventsByLocation extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      eventsGroupedByDistance: {}
+      eventsGroupedByDistance: {},
     };
   }
 
   componentWillMount() {
     if (this.props.events.length > 0) {
       this.getEventsGroupedByDistance((eventsGroupedByDistance) => {
-        this.setState({eventsGroupedByDistance, loading: false});
+        this.setState({ eventsGroupedByDistance, loading: false });
       });
     }
   }
 
   getEventsGroupedByDistance(callback) {
-    const {events, origin} = this.props;
+    const { events, origin } = this.props;
 
     const destinations = events.map((event) => (
       `${event.address.street} ${event.address.zip}`
@@ -35,7 +35,7 @@ export default class EventsByLocation extends React.Component {
       if (status === google.maps.DistanceMatrixStatus.OK) {
         const distances = _.map(response.rows[0].elements, 'distance.value');
         const eventsWithDistance = _(_.zip(events, distances))
-          .map(function (eventWithDistance) {
+          .map(eventWithDistance => {
             const [event, distance] = eventWithDistance;
             event.distance = distance;
             return event;
@@ -43,15 +43,17 @@ export default class EventsByLocation extends React.Component {
           .sortBy('distance')
           .value();
 
-        const eventsGroupedByDistance = _.groupBy(eventsWithDistance, function ({distance}) {
+        const eventsGroupedByDistance = _.groupBy(eventsWithDistance, ({ distance }) => {
           if (distance <= 10 * METERS_PER_MILE) {
             return 'Within 10 Miles';
-          } else if (distance <= 20 * METERS_PER_MILE) {
-            return 'Within 20 Miles';
-          } else {
-            return 'Further than 20 Miles';
           }
-        })
+
+          if (distance <= 20 * METERS_PER_MILE) {
+            return 'Within 20 Miles';
+          }
+
+          return 'Further than 20 Miles';
+        });
 
         callback(eventsGroupedByDistance);
       }
@@ -89,7 +91,7 @@ export default class EventsByLocation extends React.Component {
           }
         </section>
       )
-    )
+    );
 
     return (
       <div className="body-color">
@@ -108,19 +110,18 @@ export default class EventsByLocation extends React.Component {
   }
 }
 
-export default createContainer((address) => {
-  return {
-    origin: address.origin,
-    events: Events.find({}).fetch(),
-  };
-}, EventsByLocation);
+export default createContainer((address) => ({
+  origin: address.origin,
+  events: Events.find({}).fetch(),
+}), EventsByLocation);
 
 EventsByLocation.propTypes = {
   events: React.PropTypes.array,
   address: React.PropTypes.object,
+  origin: React.PropTypes.any.isRequired,
 };
 
-function Loading () {
+function Loading() {
   return (
     <div>
       <section>
@@ -135,5 +136,5 @@ function Loading () {
         </div>
       </section>
     </div>
-  )
+  );
 }

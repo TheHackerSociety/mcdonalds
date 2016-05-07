@@ -6,6 +6,7 @@
     // throw errors for it.
     "no-console":  0,
     "no-debugger": 0,
+    "new-cap": 0
   },
 
   // To configure global variables inside of a configuration file, use the
