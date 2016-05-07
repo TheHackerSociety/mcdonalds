@@ -9,10 +9,6 @@ export default class Search extends React.Component {
     this.state = { query: '' };
   }
 
-  searchByGeolocation() {
-
-  }
-
   render() {
     return (
       <div className="body-color">
@@ -21,7 +17,7 @@ export default class Search extends React.Component {
             <Link href="index.html"
               className="nav-text cancel"
               params={{ path: 'index' }} >
-              Cancel
+              {i18n('Cancel')}
             </Link>
           </nav>
           <input id="address-2"
@@ -32,15 +28,10 @@ export default class Search extends React.Component {
             data-name="Address 2"
             className="w-input input"
           />
-          <img
-            onClick={() => this.searchByGeolocation()}
-            alt="target icon"
-            src="images/input-icon.svg"
-            className="address-icon"/>
           {
             this.state.query
               ? null
-              : <div className="address-prompt">Type your address or zip</div>
+              : <div className="address-prompt">{i18n('Type your address or zip')}</div>
           }
           <div className="address-container">
             <div className="dates-container">

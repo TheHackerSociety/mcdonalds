@@ -96,7 +96,7 @@ export default class EventsByLocation extends React.Component {
         <div className="container">
           <nav className="nav events-nav">
             <img alt="triangle" src="images/triangle-icon.svg" className="back-arrow" />
-            <Link href="search.html" className="nav-text" params={{ path: 'search' }}> Back
+            <Link href="search.html" className="nav-text" params={{ path: 'search' }}> {i18n('Back')}
             </Link>
           </nav>
           <div>

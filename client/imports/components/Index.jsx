@@ -33,8 +33,8 @@ const Index = ({}) => (
                 className="center"
               />
               <div className="btn-text">
-                Find by
-                <br /> location
+                {i18n('Find by')}
+                <br /> {i18n('location')}
               </div>
             </Link>
             <Link
@@ -44,8 +44,8 @@ const Index = ({}) => (
             >
               <img alt="Find by location date icon" src="images/date-bus.svg" className="center" />
               <div className="btn-text">
-                Find by
-                <br />date
+                {i18n('Find by')}
+                <br />{i18n('date')}
               </div>
             </Link>
           </div>

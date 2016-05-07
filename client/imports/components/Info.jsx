@@ -6,51 +6,50 @@ const Info = ({}) => (
         <div className="container">
           <nav className="nav-padding">
             <img alt="triangle" src="images/triangle-icon.svg" className="back-arrow" />
-            <Link href="index.html" className="nav-text" params={{ path: 'index' }}> Back
+            <Link href="index.html" className="nav-text" params={{ path: 'index' }}> {i18n('Back')}
             </Link>
           </nav>
           <section className="details-section">
             <p className="service-paragraph">
-              Ronald McDonald Care Mobile
+              {i18n('Ronald McDonald Care Mobile')}
               <span className="bold-text">
-                FREE
+                {i18n('FREE')}
               </span>
-              capabilities and pediatric primary care services provided will
-              vary by each community’s needs and may include:
+              {i18n('capabilities and pediatric primary care services provided will vary by each community’s needs and may include')}
             </p>
             <ul>
               <li>
-                Immunizations
+                {i18n('Immunizations')}
               </li>
               <li>
-                Well-child visits
+                {i18n('Well-child visits')}
               </li>
               <li>
-                Ill or urgent care visits
+                {i18n('Ill or urgent care visits')}
               </li>
               <li>
-                Body Mass Index calculations and nutrition counseling
+                {i18n('Body Mass Index calculations and nutrition counseling')}
               </li>
               <li>
-                Developmental screenings
+                {i18n('Developmental screenings')}
               </li>
               <li>
-                Vision and hearing screening
+                {i18n('Vision and hearing screening')}
               </li>
               <li>
-                Free medicine for uninsured children through on-site TCH pharmacy
+                {i18n('Free medicine for uninsured children through on-site TCH pharmacy')}
               </li>
               <li>
-                School physicals – general and sports related
+                {i18n('School physicals – general and sports related')}
               </li>
               <li>
-                Blood collection and point of care testing
+                {i18n('Blood collection and point of care testing')}
               </li>
               <li>
-                Childhood health education and injury prevention education
+                {i18n('Childhood health education and injury prevention education')}
               </li>
               <li>
-                Specialty care referrals including mental health and social service referrals
+                {i18n('Specialty care referrals including mental health and social service referrals')}
               </li>
             </ul>
           </section>
