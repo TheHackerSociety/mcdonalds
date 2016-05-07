@@ -13,17 +13,19 @@ export default class Search extends React.Component {
       const self = this;
 
       navigator.geolocation.getCurrentPosition(function(position) {
-            navigator.geolocation
-
             const {latitude, longitude} = position.coords;
             const latlng = { lat: Number(latitude), lng: Number(longitude)};
             const geocoder = new google.maps.Geocoder;
 
             geocoder.geocode({'location': latlng}, function(results, status){
-              const location = results[0].formatted_address;
-              if(location){
-                  self.setState({query: location});
-              }    
+              if(results[0].formatted_address){
+                  const location = results[0].formatted_address;
+                  if(location){
+                    self.setState({query: location});
+                    self.props.setAddress(location);
+                  }   
+              }
+               
             });
     });
   }
@@ -63,7 +65,8 @@ export default class Search extends React.Component {
               <GooglePlaces
                 options={{ input: this.state.query }}
                 itemProps={{ onClick: this.props.setAddress }}
-                itemComponent={PlaceItemSearch} />
+                itemComponent={PlaceItemSearch} 
+                />
 
             </div>
           </div>
