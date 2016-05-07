@@ -1,3 +1,17 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
 p {
   margin-bottom: 10px;
   font-family: 'Open Sans', sans-serif;
@@ -56,6 +70,7 @@ li {
 }
 
 .body-color {
+  animation: fadeIn 0.25s 0s both;
   background-color: #000;
 }
 
