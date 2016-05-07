@@ -15,7 +15,7 @@ export default class EventsByDate extends React.Component {
         <div className="container">
           <nav className="nav events-nav">
             <img alt="back arrow" src="images/triangle-icon.svg" className="back-arrow" />
-            <Link href="search.html" className="nav-text" params={{ path: 'index' }}> Back
+            <Link href="search.html" className="nav-text" params={{ path: 'index' }}> i18n('Back')
             </Link>
           </nav>
             <section>

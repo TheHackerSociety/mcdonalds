@@ -7,4 +7,13 @@ Meteor.subscribe('events');
 Meteor.subscribe('users');
 Meteor.startup(() => {
   render(<App />, document.getElementById('app'));
+
+  var localeFromBrowser = window.navigator.userLanguage || window.navigator.language;
+  var locale = 'en';
+  //if (localeFromBrowser.match(/de/)) {
+  //  locale = 'de';
+  //}
+  i18n.setLanguage(locale);
+
+  return i18n.setDefaultLanguage('en');
 });

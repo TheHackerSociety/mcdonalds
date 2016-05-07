@@ -1,0 +1,27 @@
+i18n.map('es', {
+
+  helloWorld: 'Hola Mundo',
+  SUN: 'Dom',
+  MON: 'Lun',
+  TUE: 'Mar',
+  WED: 'Mie',
+  THU: 'Jue',
+  FRI: 'Vie',
+  SAT: 'Sab',
+  JAN: 'ENE',
+  FEB: 'FEB',
+  MAR: 'MAR',
+  APR: 'ABR',
+  MAY: 'MAY',
+  JUN: 'JUN',
+  JUL: 'JUL',
+  AUG: 'AGO',
+  SEP: 'SEP',
+  OCT: 'OCT',
+  NOV: 'NOV',
+  DEC: 'DIC',
+  MILES: 'MILES',
+  AWAY: 'LEJOS',
+  Back: 'espalda',
+
+});

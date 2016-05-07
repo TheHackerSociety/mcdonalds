@@ -1,7 +1,7 @@
 import React from 'react';
 
-const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+const WEEKDAYS = [i18n('SUN'), i18n('MON'), i18n('TUE'), i18n('WED'), i18n('THU'), i18n('FRI'), i18n('SAT')];
+const MONTHS = [i18n('JAN'), i18n('FEB'), i18n('MAR'), i18n('APR'), i18n('MAY'), i18n('JUN'), i18n('JUL'), i18n('AUG'), i18n('SEP'), i18n('OCT'), i18n('NOV'), i18n('DEC')];
 const METERS_PER_MILE = 1609.34;
 
 export default class EventItemLocation extends React.Component {
@@ -21,8 +21,8 @@ export default class EventItemLocation extends React.Component {
               {(event.distance / METERS_PER_MILE).toFixed(2)}
             </div>
             <div className="miles-text">
-              MILES
-              <br />AWAY
+              i18n('MILES')
+              <br />i18n('AWAY')
             </div>
           </div>
           <div className="w-clearfix date-container">
