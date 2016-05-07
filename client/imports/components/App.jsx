@@ -1,13 +1,23 @@
 import React from 'react';
-import AdminContainer from './admin/AdminContainer';
-import EventsByDateContainer from './EventsByDateContainer';
-import EventsByLocationContainer from './EventsByLocationContainer';
-import IndexContainer from './IndexContainer';
-import InfoContainer from './InfoContainer';
-import LocationErrorContainer from './error/LocationErrorContainer';
-import LoginContainer from './admin/LoginContainer';
-import SearchContainer from './SearchContainer';
+import Admin from './admin/Admin';
+import EventsByDate from './EventsByDate';
+import EventsByLocation from './EventsByLocation';
+import Index from './Index';
+import Info from './Info';
+import LocationError from './error/LocationError';
+import Login from './admin/Login';
+import Search from './Search';
+import MakeContainer from './MakeContainer';
 import ParamStore from 'param-store';
+
+const IndexContainer = MakeContainer(Index, /((^index$)|(^$))/ig);
+const SearchContainer = MakeContainer(Search, /^search$/ig, {setAddress: React.PropTypes.func});
+const InfoContainer = MakeContainer(Info, /^info$/ig);
+const LoginContainer = MakeContainer(Login, /^login$/ig);
+const EventsByLocationContainer = MakeContainer(EventsByLocation, /^events-by-location$/ig);
+const LocationErrorContainer = MakeContainer(LocationError, /^location-error$/ig);
+const EventsByDateContainer = MakeContainer(EventsByDate, /^events-by-date$/ig);
+const AdminContainer = MakeContainer(Admin, /^admin$/ig);
 
 export default class App extends React.Component {
   constructor(props) {

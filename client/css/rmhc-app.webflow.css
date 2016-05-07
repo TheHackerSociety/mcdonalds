@@ -8,7 +8,7 @@
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0;}
+    0% { opacity: 0.25;}
     100% { opacity: 1;}
 }
 
@@ -70,7 +70,7 @@ li {
 }
 
 .body-color {
-  animation: fadeIn 0.25s 0s both;
+  animation: fadeIn 0.5s 0s both;
   background-color: #000;
 }
 
