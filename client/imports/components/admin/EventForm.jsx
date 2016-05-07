@@ -14,7 +14,7 @@ export default class EventForm extends React.Component {
             </label>
             <input id="Location-2"
               type="text"
-              placeholder="Enter Location"
+              placeholder={i18n("Enter Location")}
               name="Location-2"
               data-name="Location 2"
               required="required"
@@ -27,7 +27,7 @@ export default class EventForm extends React.Component {
             </label>
             <input id="Address-2"
               type="text"
-              placeholder="Enter Address"
+              placeholder={i18n("Enter Address")}
               name="Address-2"
               data-name="Address 2"
               required="required"
@@ -42,7 +42,7 @@ export default class EventForm extends React.Component {
             </label>
             <input id="Date-2"
               type="date"
-              placeholder="mm/dd/yyyy"
+              placeholder={i18n("mm/dd/yyyy")}
               name="Date-2"
               data-name="Date 2"
               required="required"
@@ -51,7 +51,7 @@ export default class EventForm extends React.Component {
           </div>
           <div className="w-clearfix input-container date">
             <label htmlFor="field-27">
-              Morning Session:
+              {i18n("Morning Session")}:
             </label>
             <MorningSelect />
             <div className="middle-text">
@@ -61,7 +61,7 @@ export default class EventForm extends React.Component {
           </div>
           <div className="w-clearfix input-container date">
             <label htmlFor="field-29">
-              Afternoon Session:
+              {i18n("Afternoon Session")}:
             </label>
             <AfternoonSelect />
             <div className="middle-text">
@@ -71,7 +71,7 @@ export default class EventForm extends React.Component {
           </div>
           <input type="submit"
             value="Submit"
-            data-wait="Please wait..."
+            data-wait={i18n("Please wait...")}
             className="w-button submit btn primary-btn-color"
           />
         </div>

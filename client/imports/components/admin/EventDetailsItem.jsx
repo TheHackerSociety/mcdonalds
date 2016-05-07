@@ -8,11 +8,11 @@ const EventDetailsItem = ({}) => (
   >
     <div className="input-container location">
       <label className="field-label" htmlFor="Location-4">
-        Location Name:
+        {i18n('Location Name')}:
       </label>
       <input id="Location-4"
         type="text"
-        placeholder="Enter Location"
+        placeholder = {i18n("Enter Location")}
         name="Location-4"
         data-name="Location 4"
         required="required"
@@ -21,11 +21,11 @@ const EventDetailsItem = ({}) => (
     </div>
     <div className="input-container address">
       <label className="field-label" htmlFor="Address-4">
-        Address:
+        {i18n("Address")}:
       </label>
       <input id="Address-4"
         type="text"
-        placeholder="Enter Address"
+        placeholder={i18n("Enter Address")}
         name="Address-4"
         data-name="Address 4"
         required="required"
@@ -34,11 +34,11 @@ const EventDetailsItem = ({}) => (
     </div>
     <div className="input-container date-input">
       <label className="field-label" htmlFor="Date-4">
-        Date:
+        {i18n("Date")}:
       </label>
       <input id="Date-4"
         type="text"
-        placeholder="mm/dd/yyyy"
+        placeholder={i18("mm/dd/yyyy")}
         name="Date-4"
         data-name="Date 4"
         required="required"
@@ -47,7 +47,7 @@ const EventDetailsItem = ({}) => (
     </div>
     <div className="w-clearfix input-container date">
       <label className="field-label" htmlFor="field-21">
-        Morning Session:
+        {i18n("Morning Session")}:
       </label>
       <select id="field-21"
         name="field-21"
@@ -107,7 +107,7 @@ const EventDetailsItem = ({}) => (
         </option>
       </select>
       <div className="middle-text">
-        to
+        {i18n("to")}
       </div>
       <select id="field-25"
         name="field-25"
@@ -169,7 +169,7 @@ const EventDetailsItem = ({}) => (
     </div>
     <div className="w-clearfix input-container date">
       <label className="field-label" htmlFor="field-23">
-        Afternoon Session:
+        {i18n("Afternoon Session")}:
       </label>
       <select id="field-23"
         name="field-23"
@@ -277,7 +277,7 @@ const EventDetailsItem = ({}) => (
         </option>
       </select>
       <div className="middle-text">
-        to
+        {i18n("to")}
       </div>
       <select id="field-26"
         name="field-26"
@@ -387,12 +387,12 @@ const EventDetailsItem = ({}) => (
     </div>
     <input type="submit"
       value="Save"
-      data-wait="Please wait..."
+      data-wait={i18n("Please wait...")}
       className="w-button submit btn primary-btn-color small"
     />
     <input type="submit"
       value="Delete"
-      data-wait="Please wait..."
+      data-wait={i18n("Please wait...")}
       className="w-button submit btn primary-btn-color delete"
     />
   </form>

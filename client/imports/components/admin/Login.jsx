@@ -15,7 +15,7 @@ export default class Login extends React.Component {
 
     Meteor.loginWithPassword(username, password, (err) => {
       if (err) {
-        alert('wrong password');
+        alert({i18n('wrong password')});
       }
     });
   }
@@ -36,18 +36,18 @@ export default class Login extends React.Component {
           />
           <div className="w-form">
               <label htmlFor="UserName">
-                User Name:
+                {i18n("User Name")}:
               </label>
               <input id="UserName"
                 onBlur={(e) => this.setState({ username: e.target.value })}
                 type="text"
-                placeholder="Enter your User Name"
+                placeholder={i18n("Enter your User Name")}
                 name="UserName"
                 data-name="UserName"
                 required="required"
                 className="w-input" />
               <label htmlFor="Password">
-                Password:
+                {i18n("Password")}:
               </label>
               <input id="Password"
                 onBlur={(e) => this.setState({ password: e.target.value })}
@@ -60,7 +60,7 @@ export default class Login extends React.Component {
               <input type="submit"
                 onClick={this.loginUser.bind(this)}
                 value="Submit"
-                data-wait="Please wait..."
+                data-wait={i18n("Please wait...")}
                 className="w-button btn primary-btn-color full-btn" />
           </div>
         </section>
