@@ -13,20 +13,19 @@ export default class Search extends React.Component {
       const self = this;
 
       navigator.geolocation.getCurrentPosition(function(position) {
-            const {latitude, longitude} = position.coords;
-            const latlng = { lat: Number(latitude), lng: Number(longitude)};
-            const geocoder = new google.maps.Geocoder;
+        const {latitude, longitude} = position.coords;
+        const latlng = { lat: Number(latitude), lng: Number(longitude)};
+        const geocoder = new google.maps.Geocoder;
 
-            geocoder.geocode({'location': latlng}, function(results, status){
-              if(results[0].formatted_address){
-                  const location = results[0].formatted_address;
-                  if(location){
-                    self.setState({query: location});
-                    self.props.setAddress(location);
-                  }   
-              }
-               
-            });
+        geocoder.geocode({'location': latlng}, function(results, status){
+          if(results[0].formatted_address){
+            const location = results[0].formatted_address;
+            if(location){
+              self.setState({query: location});
+              self.props.setAddress(location);
+            };   
+          };
+        });
     });
   }
 
