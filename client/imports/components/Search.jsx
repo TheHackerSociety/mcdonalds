@@ -10,7 +10,22 @@ export default class Search extends React.Component {
   }
 
   searchByGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const latlng = { lat: Number(latitude), lng: Number(longitude) };
+        const geocoder = new google.maps.Geocoder;
 
+        geocoder.geocode({ location: latlng }, (results, status) => {
+          if (status === google.maps.GeocoderStatus.OK) {
+            const { formatted_address } = results[0];
+            this.props.setAddress(formatted_address);
+          }
+        });
+      });
+    } else {
+      alert('Current location is unavailable.');
+    }
   }
 
   render() {
@@ -25,7 +40,7 @@ export default class Search extends React.Component {
             </Link>
           </nav>
           <input id="address-2"
-            onChange={(e) => this.setState({query: e.target.value})}
+            onChange={(e) => this.setState({ query: e.target.value })}
             type="text"
             placeholder="Address or zip"
             name="address-2"
@@ -36,7 +51,8 @@ export default class Search extends React.Component {
             onClick={() => this.searchByGeolocation()}
             alt="target icon"
             src="images/input-icon.svg"
-            className="address-icon"/>
+            className="address-icon"
+          />
           {
             this.state.query
               ? null
